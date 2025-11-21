@@ -1,9 +1,9 @@
-# Thermal and Behavioural Response Analyses
+# 🔥 Thermal and Behavioural Response Analyses
 
 This repository contains the combined workflow for processing and visualizing:
 
-1. **Shelter / sediment temperature time series** with inundation shading  
-2. **Depth–temperature positional-variability analysis** (moving-window response)
+1. ** Sediment temperature time series** with tidal-inundation shading  
+2. **Depth–temperature positional-variability analysis** using a moving-window approach
 
 All analyses are executed from a single script:
 
@@ -11,59 +11,71 @@ All analyses are executed from a single script:
 
 ---
 
-## Data Inputs
+## 📂 Data Inputs
 
 Place the following files in the repository root:
 
-**Shelter temperature sensors**
-- `PPCa0.csv`  
-- `PPCb0.csv`  
-- `PPCa3.csv`  
-- `PPCb3.csv`  
-- `tern_rect.csv`  *(tidal inundation periods)*
+### ** HOBO temperature logger data**
+- `PPCa0.csv`
+- `PPCb0.csv`
+- `PPCa3.csv`
+- `PPCb3.csv`
+- `tern_rect.csv` *(tidal inundation windows)*
 
-**Depth–temperature dataset**
+### **Depth–temperature dataset**
 - `cc_depth_temp.csv`
 
 ---
 
-## Output Figures
+## 📊 Output Figures
 
-### 1. Shelter temperature series
+### **1. Surface sediment temperature series**
+**File:** `pp_sedimnt_tempData.png`
+![HOBO logger temperature series](pp_sedimnt_tempData.png)
 
-- **File:** `pp_shelters.png`  
-
-This figure shows the time series of air and sediment (3 cm depth) temperature across the experimental period, with tidal inundation periods highlighted as shaded intervals. It provides a high-resolution view of the thermal conditions experienced by experimental animals.
-
-### 2. Positional variability under thermal stress
-
-- **File:** `posSD_temp_ggplot.png`  
-
-This figure summarizes how individual movement behaviour responds to temperature. It shows:
-- daily mean temperature,
-- the standard deviation of position (SD of depth or horizontal position),
-- moving-window averages of variability,
-- and a fitted linear model describing how positional stability changes with temperature.
-
-Together, these plots link fine-scale behavioural responses to the underlying thermal regime.
+This figure shows the time series of air and sediment (3 cm depth) temperatures across the experimental period.  
+Tidal inundation periods are highlighted as shaded intervals, offering a detailed look at thermal exposure cycles.
 
 ---
 
-## Running the Workflow
+### **2. Positional variability under thermal stress**
+**File:** `posSD_temp_ggplot.png`
 
-To run the full workflow and generate both figures, start R in the repository root and execute:
+![Positional variability under thermal stress](posSD_temp_ggplot.png)
+
+This figure summarises how individual movement behaviour responds to temperature. It includes:
+
+- daily mean temperatures,  
+- the standard deviation of position (SD of depth/horizontal displacement),  
+- moving-window averages,  
+- and a fitted linear model relating temperature to positional variability.
+
+Together, these outputs describe fine-scale behavioural responses under varying thermal conditions.
+
+---
+
+## ▶️ Running the Workflow
+
+To run the full workflow and generate both figures, execute:
 
 ```r
 source("data_processing_and_depth_plots.R")
+```
 
 The script will:
-- read all required input CSV files from the root folder,
-- process the time series and depth–temperature data,
-- produce pp_shelters.png and posSD_temp_ggplot.png in the working directory.
+- read all required input CSV files from the repository root
+- process the shelter time-series and depth–temperature datasets
+- generate the following output files:
+	- pp_shelters.png
+	- posSD_temp_ggplot.png
 
-Required R Packages
+---
 
-The script uses the following R packages:
+## 📦 Required R Packages
+
+The workflow requires the following R packages:
+
+```r
 library(plyr)
 library(ggplot2)
 library(gganimate)
@@ -74,23 +86,30 @@ library(png)
 library(ggpubr)
 library(plotrix)
 library(car)
+```
+To install all required packages:
 
-Make sure these packages are installed before running the script, for example:
+```r
 install.packages(c(
   "plyr", "ggplot2", "gganimate", "gifski",
-  "anytime", "scales", "png", "ggpubr", "plotrix", "car"
+  "anytime", "scales", "png", "ggpubr",
+  "plotrix", "car"
 ))
+```
 
-Usage & Permissions
+## 📜 Usage, Permissions, and Redistribution
 
-This workflow is intended solely for academic, non-commercial research.
-	•	Commercial reuse, reselling, or integration into proprietary tools requires written permission from the authors.
-	•	Public reposting of figures, scripts, or derived outputs beyond academic presentations and publications also requires prior approval.
+This workflow is provided exclusively for academic and non-commercial research.
+- Commercial use, including integration into proprietary software, consulting work, or paid services, requires explicit written permission from the authors.
+- Public reposting or redistribution of figures, scripts, or derived data (e.g., on external websites, media, or reports) also requires prior approval.
+- Some raw datasets may be subject to additional usage restrictions by their original providers.
 
-Please contact the repository owner before using this workflow in commercial or public applications beyond standard academic use.
+For permissions or inquiries, please contact the repository maintainer.
 
-⸻
+---
 
-Contact
+## 📞 Contact
 
-For questions, bug reports, or collaboration inquiries, please open an issue on this repository or contact the maintainer directly.
+For questions, issues, or collaboration requests,
+please open an issue on this repository or contact the maintainer directly.
+ 
