@@ -2,7 +2,7 @@
 
 This repository contains the combined workflow for processing and visualizing:
 
-1. ** Sediment temperature time series** with tidal-inundation shading  
+1. **Sediment temperature time series** with tidal-inundation shading  
 2. **Depth–temperature positional-variability analysis** using a moving-window approach
 
 All analyses are executed from a single script:
