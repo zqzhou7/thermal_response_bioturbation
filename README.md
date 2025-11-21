@@ -31,6 +31,7 @@ Place the following files in the repository root:
 
 ### **1. Surface sediment temperature series**
 **File:** `pp_sedimnt_tempData.png`
+
 ![HOBO logger temperature series](pp_sedimnt_tempData.png)
 
 This figure shows the time series of air and sediment (3 cm depth) temperatures across the experimental period.  
