@@ -15,7 +15,7 @@ All analyses are executed from a single script:
 
 Place the following files in the repository root:
 
-### ** HOBO temperature logger data**
+### **HOBO temperature logger data**
 - `PPCa0.csv`
 - `PPCb0.csv`
 - `PPCa3.csv`
